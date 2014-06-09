@@ -7,14 +7,6 @@
 
 function ku4reflection_execute_async(instance, method, args, callback)
 {
-    /*
-    var _callback = callback || function() { return;},
-        callbackIdx = args.indexOf("__CALLBACK__");
-    while(callbackIdx !== -1) {
-        args[callbackIdx] = _callback;
-        callbackIdx = args.indexOf("__CALLBACK__");
-    }
-    */
     var _callback = callback || function() { return;},
         format = "({0}).apply(null, arguments)",
         regexp = /__CALLBACK__/g;

@@ -40,11 +40,18 @@ function ku4reflection_instantiate(Class, constructors) {
         namespace = Class.split("."),
         rootObject = (containsNew)
             ? $.str.format("{0}({1})", Class, $.json.serialize(constructors).replace(/^\[/, "").replace(/\]$/, ""))
-            : namespace.shift(),
-        _class = eval("(" + rootObject + ")");
+            : namespace.shift();
 
-    if(!containsNew)$.list(namespace).each(function (item) {  _class = _class[item];  });
-    return (containsNew || !$.exists(_class.apply)) ? _class : _class.apply(this, constructors);
+    try {
+        var _class = eval("(" + rootObject + ")");
+        if (!containsNew) $.list(namespace).each(function (item) {
+            _class = _class[item];
+        });
+        return (containsNew || !$.exists(_class.apply)) ? _class : _class.apply(this, constructors);
+    }
+    catch(e) {
+        throw $.ku4exception("Argument Exception", $.str.format("Cannot instantiate Class = {0}. Is not defined.", Class));
+    }
 }
 
 /* Executes the method of instance with args, and replaces all args passed
@@ -56,14 +63,6 @@ function ku4reflection_instantiate(Class, constructors) {
 
 function ku4reflection_execute_async(instance, method, args, callback)
 {
-    /*
-    var _callback = callback || function() { return;},
-        callbackIdx = args.indexOf("__CALLBACK__");
-    while(callbackIdx !== -1) {
-        args[callbackIdx] = _callback;
-        callbackIdx = args.indexOf("__CALLBACK__");
-    }
-    */
     var _callback = callback || function() { return;},
         format = "({0}).apply(null, arguments)",
         regexp = /__CALLBACK__/g;
