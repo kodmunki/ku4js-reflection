@@ -22,5 +22,43 @@ this process:
 * STARTMSG (A message to echo at start of build)
 * ENDMSG (A message to echo at end of build)
 
-
 #Documentation
+
+##$.ku4reflection
+All reflection methods are called through the $.ku4reflection namespace.
+
+###instantiate
+| API | Return | Description |
+| --- | --- | --- |
+| instantiate(Class:_String_, constructors:_Array_ | Object | return an instance of Class constructed with constructors |
+
+###execute
+_Complete Documentation Coming Soon_
+
+| API | Return | Description |
+| --- | --- | --- |
+| execute(func:_Function_) | Object |  |
+| execute(func:_Function_, args:_Array_) | Object |  |
+| execute(instance:_Object_, method:_String_) | Object |  |
+| execute(instance:_Object_, method:_Object_) | Object |  |
+| execute(instance:_Object_, method:_Array_) | Object |  |
+| execute(instance:_Object_, method:_String_, arguments:_Array_) | Object |  |
+| execute(instance:_Object_, method:_Object_, arguments:_Array_) | Object |  |
+| execute(instance:_Object_, methods:_Array_, callback_Function_) | void |  |
+| execute(instance:_Object_, method:_String_, arguments:_Array_, callback:_Function_) | void |  |
+
+###invoke
+_Complete Documentation Coming Soon_
+
+| API | Return | Description |
+| --- | --- | --- |
+| invoke(Class:_String_, constructors:_Array_, method:_String_) | Object |  |
+| invoke(Class:_String_, constructors:_Array_, method:_Object_) | Object |  |
+| invoke(Class:_String_, constructors:_Array_, method:_Array_) | Object |  |
+| invoke(Class:_String_, constructors:_Array_, method:_String_, arguments:_Array_) | Object |  |
+| invoke(Class:_String_, constructors:_Array_, method:_Object_, arguments:_Array_) | Object |  |
+| invoke(Class:_String_, constructors:_Array_, methods:_Array_, callback_Function_) | void |  |
+| invoke(Class:_String_, constructors:_Array_, method:_String_, arguments:_Array_, callback:_Function_) | void |  |
+
+##Blocks
+_Documentation Coming Soon_
