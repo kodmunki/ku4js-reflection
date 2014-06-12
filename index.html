@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>ku4js-reflection by kodmunki</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>ku4js-reflection</h1>
+        <p>kodmunki™ utilities for JavaScript reflection</p>
+
+        <p class="view"><a href="https://github.com/kodmunki/ku4js-reflection">View the Project on GitHub <small>kodmunki/ku4js-reflection</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kodmunki/ku4js-reflection/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kodmunki/ku4js-reflection/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kodmunki/ku4js-reflection">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="ku4js-reflection" class="anchor" href="#ku4js-reflection"><span class="octicon octicon-link"></span></a>ku4js-reflection</h1>
+
+<p>kodmunki™ utilities for JavaScript Web Reflection.</p>
+
+<p><em>(The following are the instructions from the build script found in the template at /_build/build.sh)</em></p>
+
+<h4>
+<a name="kodmunki-build-process" class="anchor" href="#kodmunki-build-process"><span class="octicon octicon-link"></span></a>kodmunki™ build process</h4>
+
+<hr><p>This build process is dependent upon yuicompressor and a specific directory structure:</p>
+
+<ul>
+<li>root<br><ul>
+<li>_build (This build script and the yuicompressor)</li>
+<li>bin (The compiled scripts will appear here)</li>
+<li>src (All script files go here)</li>
+</ul>
+</li>
+</ul><p>The following variables found in setup () are
+expected to be changed by the developer running
+this process:</p>
+
+<ul>
+<li>PROJNAME (The name of your project)</li>
+<li>STARTMSG (A message to echo at start of build)</li>
+<li>ENDMSG (A message to echo at end of build)</li>
+</ul><h1>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<h2>
+<a name="ku4reflection" class="anchor" href="#ku4reflection"><span class="octicon octicon-link"></span></a>$.ku4reflection</h2>
+
+<p>All reflection methods are called through the $.ku4reflection namespace.</p>
+
+<h3>
+<a name="instantiate" class="anchor" href="#instantiate"><span class="octicon octicon-link"></span></a>instantiate</h3>
+
+<table>
+<thead><tr>
+<th>API</th>
+<th>Return</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>instantiate(Class:<em>String</em>, constructors:<em>Array</em>
+</td>
+<td>Object</td>
+<td>return an instance of Class constructed with constructors</td>
+</tr></tbody>
+</table><h3>
+<a name="execute" class="anchor" href="#execute"><span class="octicon octicon-link"></span></a>execute</h3>
+
+<p><em>Complete Documentation Coming Soon</em></p>
+
+<table>
+<thead><tr>
+<th>API</th>
+<th>Return</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>execute(func:<em>Function</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(func:<em>Function</em>, args:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>String</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>Object</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>String</em>, arguments:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>Object</em>, arguments:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, methods:<em>Array</em>, callback_Function_)</td>
+<td>void</td>
+<td></td>
+</tr>
+<tr>
+<td>execute(instance:<em>Object</em>, method:<em>String</em>, arguments:<em>Array</em>, callback:<em>Function</em>)</td>
+<td>void</td>
+<td></td>
+</tr>
+</tbody>
+</table><h3>
+<a name="invoke" class="anchor" href="#invoke"><span class="octicon octicon-link"></span></a>invoke</h3>
+
+<p><em>Complete Documentation Coming Soon</em></p>
+
+<table>
+<thead><tr>
+<th>API</th>
+<th>Return</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, arguments:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>, arguments:<em>Array</em>)</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, methods:<em>Array</em>, callback_Function_)</td>
+<td>void</td>
+<td></td>
+</tr>
+<tr>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, arguments:<em>Array</em>, callback:<em>Function</em>)</td>
+<td>void</td>
+<td></td>
+</tr>
+</tbody>
+</table><h2>
+<a name="blocks" class="anchor" href="#blocks"><span class="octicon octicon-link"></span></a>Blocks</h2>
+
+<p><em>Documentation Coming Soon</em></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kodmunki">kodmunki</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
