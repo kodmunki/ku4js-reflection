@@ -41,9 +41,9 @@ All reflection methods are called through the $.ku4reflection namespace.
 | execute(instance:_Object_, method:_Object_) | Object | returns the result of invoking method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. |
 | execute(instance:_Object_, methods:_Array_) | Object | returns the result of invoking the chain of methods represented by an array of method objects. |
 | execute(instance:_Object_, method:_String_, args:_Array_) | Object | returns the result of invoking method of instance with args |
-| execute(instance:_Object_, method:_Object_, callback:_Function_) | void | invokes method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result. |
-| execute(instance:_Object_, methods:_Array_, callback_Function_) | void | invokes the chain of methods of instance represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result. |
-| execute(instance:_Object_, method:_String_, args:_Array_, callback:_Function_) | void | invokes method of instance with args. The callback is called with the result. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result. |
+| execute(instance:_Object_, method:_Object_, callback:_Function_) | void | invokes method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all instances of arg == "\_\_CALLBACK\_\_", and called with the result. |
+| execute(instance:_Object_, methods:_Array_, callback_Function_) | void | invokes the chain of methods of instance represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all instances of arg == "\_\_CALLBACK\_\_", and called with the result. |
+| execute(instance:_Object_, method:_String_, args:_Array_, callback:_Function_) | void | invokes method of instance with args. The callback is called with the result. The callback is inserted inserted for all instances of arg == "\_\_CALLBACK\_\_", and called with the result. |
 
 ####Examples:
 Examples of these methods can be found in the unit tests for execute:
@@ -57,9 +57,9 @@ Examples of these methods can be found in the unit tests for execute:
 | invoke(Class:_String_, constructors:_Array_, method:_Object_) | Object | returns the result of invoking method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. |
 | invoke(Class:_String_, constructors:_Array_, methods:_Array_) | Object | returns the result of invoking the chain of methods represented by an array of method objects. |
 | invoke(Class:_String_, constructors:_Array_, method:_String_, args:_Array_) | Object | returns the result of invoking method of Class constructed with constructors with args |
-| invoke(Class:_String_, constructors:_Array_, method:_Object_, callback:_Function_) | void | invokes method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result. |
-| invoke(Class:_String_, constructors:_Array_, methods:_Array_, callback_Function_) | void | invokes the chain of methods of Class constructed with constructors represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result. |
-| invoke(Class:_String_, constructors:_Array_, method:_String_, args:_Array_, callback:_Function_) | void | invokes method of Class constructed with constructors with args. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result. |
+| invoke(Class:_String_, constructors:_Array_, method:_Object_, callback:_Function_) | void | invokes method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all Class constructed with constructorss of arg == "\_\_CALLBACK\_\_", and called with the result. |
+| invoke(Class:_String_, constructors:_Array_, methods:_Array_, callback_Function_) | void | invokes the chain of methods of Class constructed with constructors represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "\_\_CALLBACK\_\_", and called with the result. |
+| invoke(Class:_String_, constructors:_Array_, method:_String_, args:_Array_, callback:_Function_) | void | invokes method of Class constructed with constructors with args. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "\_\_CALLBACK\_\_", and called with the result. |
 
 ####Examples:
 Examples of these methods can be found in the unit tests for execute:
@@ -70,7 +70,7 @@ Examples of these methods can be found in the unit tests for execute:
 Blocks are a addition that came out of Apple's extension of C. Where blocks open the ability to implement closures in C.
 Though JavaScript already includes this feature, the ability to pass functions across processes and threads may arise in
 the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across as
-arguments to async reflection invocations and include "__CALLBACK__" replacements in withing the block.
+arguments to async reflection invocations and include "\_\_CALLBACK\_\_" replacements in withing the block.
 
 Blocks are strings that take the following form:
 ```javascript
