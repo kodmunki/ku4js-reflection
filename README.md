@@ -67,10 +67,10 @@ Examples of these methods can be found in the unit tests for execute:
 * [async](https://github.com/kodmunki/ku4js-reflection/tree/master/tests/src/class/async)
 
 ##Blocks
-Blocks are a addition that came out of Apple's extension of C. Where blocks open the ability to implement closures in C.
-Though JavaScript already includes this feature, the ability to pass functions across processes and threads may arise in
-the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across as
-arguments to async reflection invocations and include "\_\_CALLBACK\_\_" replacements in withing the block.
+Blocks are an addition that came out of Apple's extension of C. Where blocks open the ability to implement closures in C.
+Although JavaScript already includes this feature, the ability to pass functions across processes and threads may arise
+in the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across
+threads as arguments to async reflection invocations and include "\_\_CALLBACK\_\_" replacements in withing the block.
 
 Blocks are strings that take the following form:
 ```javascript
