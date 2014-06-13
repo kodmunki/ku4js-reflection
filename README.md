@@ -75,7 +75,7 @@ arguments to async reflection invocations and include "\_\_CALLBACK\_\_" replace
 Blocks are strings that take the following form:
 ```javascript
 '^([arg1[, arg2[, ...]]]) { /* implementation that may include __CALLBACK__ */ }'
-``
+```
 
 Using this, we can see in the following example how a block may be used:
 
