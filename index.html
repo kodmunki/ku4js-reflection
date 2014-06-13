@@ -207,12 +207,11 @@ arguments to async reflection invocations and include "__CALLBACK__" replacement
 <p>Blocks are strings that take the following form:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="s1">'^([arg1[, arg2[, ...]]]) { /* implementation that may include __CALLBACK__ */ }'</span>
-<span class="err">``</span>
+</pre></div>
 
-<span class="nx">Using</span> <span class="k">this</span><span class="p">,</span> <span class="nx">we</span> <span class="nx">can</span> <span class="nx">see</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">example</span> <span class="nx">how</span> <span class="nx">a</span> <span class="nx">block</span> <span class="nx">may</span> <span class="nx">be</span> <span class="nx">used</span><span class="o">:</span>
+<p>Using this, we can see in the following example how a block may be used:</p>
 
-<span class="err">```</span><span class="nx">javascript</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">ku4reflection</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s2">"$.service"</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">ku4reflection</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s2">"$.service"</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"uri"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"./"</span><span class="p">]},</span>
     <span class="p">{</span><span class="s2">"onSuccess"</span><span class="o">:</span> <span class="p">[</span><span class="s1">'^(){  __CALLBACK__; }'</span><span class="p">]},</span>
     <span class="p">{</span><span class="s2">"onError"</span><span class="o">:</span> <span class="p">[</span><span class="s1">'^(){ (function() { __CALLBACK__; })("ERROR"); }'</span><span class="p">]},</span>
