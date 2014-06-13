@@ -121,17 +121,17 @@ this process:</p>
 <tr>
 <td>execute(instance:<em>Object</em>, method:<em>Object</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td>invokes method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 <tr>
 <td>execute(instance:<em>Object</em>, methods:<em>Array</em>, callback_Function_)</td>
 <td>void</td>
-<td>invokes the chain of methods of instance represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes the chain of methods of instance represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 <tr>
 <td>execute(instance:<em>Object</em>, method:<em>String</em>, args:<em>Array</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td>invokes method of instance with args. The callback is called with the result. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes method of instance with args. The callback is called with the result. The callback is inserted inserted for all instances of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 </tbody>
 </table><h4>
@@ -175,17 +175,17 @@ this process:</p>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td>invokes method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, methods:<em>Array</em>, callback_Function_)</td>
 <td>void</td>
-<td>invokes the chain of methods of Class constructed with constructors represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes the chain of methods of Class constructed with constructors represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, args:<em>Array</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td>invokes method of Class constructed with constructors with args. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
+<td>invokes method of Class constructed with constructors with args. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "__CALLBACK__", and called with the result.</td>
 </tr>
 </tbody>
 </table><h4>
@@ -202,7 +202,7 @@ this process:</p>
 <p>Blocks are a addition that came out of Apple's extension of C. Where blocks open the ability to implement closures in C.
 Though JavaScript already includes this feature, the ability to pass functions across processes and threads may arise in
 the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across as
-arguments to async reflection invocations and include "<strong>CALLBACK</strong>" replacements in withing the block.</p>
+arguments to async reflection invocations and include "__CALLBACK__" replacements in withing the block.</p>
 
 <p>Blocks are strings that take the following form:</p>
 
