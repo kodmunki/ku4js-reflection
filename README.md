@@ -72,6 +72,12 @@ Although JavaScript already includes this feature, the ability to pass functions
 in the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across
 threads as arguments to async reflection invocations and include "\_\_CALLBACK\_\_" replacements in withing the block.
 
+| API | Return | Description |
+| --- | --- | --- |
+| isBlock(value:_String_) | Boolean | a class level method that returns true if value is a block. |
+| execute(block:_String_) | Object? | executes the block returning any return value that the block returns. |
+| toFunction(block:_String_) | Function | returns a function representation of the passed block. |
+
 Blocks are strings that take the following form:
 ```javascript
 '^([arg1[, arg2[, ...]]]) { /* implementation that may include __CALLBACK__ */ }'
