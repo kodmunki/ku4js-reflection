@@ -81,8 +81,6 @@ this process:</p>
 </table><h3>
 <a name="execute" class="anchor" href="#execute"><span class="octicon octicon-link"></span></a>execute</h3>
 
-<p><em>Complete Documentation Coming Soon</em></p>
-
 <table>
 <thead><tr>
 <th>API</th>
@@ -93,53 +91,59 @@ this process:</p>
 <tr>
 <td>execute(func:<em>Function</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of executing func.</td>
 </tr>
 <tr>
 <td>execute(func:<em>Function</em>, args:<em>Array</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of executing func passing applying args as the arguments</td>
 </tr>
 <tr>
 <td>execute(instance:<em>Object</em>, method:<em>String</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of instance.</td>
 </tr>
 <tr>
 <td>execute(instance:<em>Object</em>, method:<em>Object</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method.</td>
 </tr>
 <tr>
-<td>execute(instance:<em>Object</em>, method:<em>Array</em>)</td>
+<td>execute(instance:<em>Object</em>, methods:<em>Array</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking the chain of methods represented by an array of method objects.</td>
 </tr>
 <tr>
-<td>execute(instance:<em>Object</em>, method:<em>String</em>, arguments:<em>Array</em>)</td>
+<td>execute(instance:<em>Object</em>, method:<em>String</em>, args:<em>Array</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of instance with args</td>
 </tr>
 <tr>
-<td>execute(instance:<em>Object</em>, method:<em>Object</em>, arguments:<em>Array</em>)</td>
-<td>Object</td>
-<td></td>
+<td>execute(instance:<em>Object</em>, method:<em>Object</em>, callback:<em>Function</em>)</td>
+<td>void</td>
+<td>invokes method of instance having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 <tr>
 <td>execute(instance:<em>Object</em>, methods:<em>Array</em>, callback_Function_)</td>
 <td>void</td>
-<td></td>
+<td>invokes the chain of methods of instance represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 <tr>
-<td>execute(instance:<em>Object</em>, method:<em>String</em>, arguments:<em>Array</em>, callback:<em>Function</em>)</td>
+<td>execute(instance:<em>Object</em>, method:<em>String</em>, args:<em>Array</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td></td>
+<td>invokes method of instance with args. The callback is called with the result. The callback is inserted inserted for all instances of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 </tbody>
-</table><h3>
-<a name="invoke" class="anchor" href="#invoke"><span class="octicon octicon-link"></span></a>invoke</h3>
+</table><h4>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples:</h4>
 
-<p><em>Complete Documentation Coming Soon</em></p>
+<p>Examples of these methods can be found in the unit tests for execute:</p>
+
+<ul>
+<li><a href="https://github.com/kodmunki/ku4js-reflection/tree/master/tests/src/instance/sync">sync</a></li>
+<li><a href="https://github.com/kodmunki/ku4js-reflection/tree/master/tests/src/instance/async">async</a></li>
+</ul><h3>
+<a name="invoke" class="anchor" href="#invoke"><span class="octicon octicon-link"></span></a>invoke</h3>
 
 <table>
 <thead><tr>
@@ -151,43 +155,72 @@ this process:</p>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of Class constructed with constructors.</td>
 </tr>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method.</td>
 </tr>
 <tr>
-<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Array</em>)</td>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, methods:<em>Array</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking the chain of methods represented by an array of method objects.</td>
 </tr>
 <tr>
-<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, arguments:<em>Array</em>)</td>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, args:<em>Array</em>)</td>
 <td>Object</td>
-<td></td>
+<td>returns the result of invoking method of Class constructed with constructors with args</td>
 </tr>
 <tr>
-<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>, arguments:<em>Array</em>)</td>
-<td>Object</td>
-<td></td>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>Object</em>, callback:<em>Function</em>)</td>
+<td>void</td>
+<td>invokes method of Class constructed with constructors having method name key and method args value, where the value of the method object is an array of arguments for the method. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 <tr>
 <td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, methods:<em>Array</em>, callback_Function_)</td>
 <td>void</td>
-<td></td>
+<td>invokes the chain of methods of Class constructed with constructors represented by an array of method objects. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 <tr>
-<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, arguments:<em>Array</em>, callback:<em>Function</em>)</td>
+<td>invoke(Class:<em>String</em>, constructors:<em>Array</em>, method:<em>String</em>, args:<em>Array</em>, callback:<em>Function</em>)</td>
 <td>void</td>
-<td></td>
+<td>invokes method of Class constructed with constructors with args. The callback is called with the result. The callback is inserted inserted for all Class constructed with constructorss of arg == "<strong>CALLBACK</strong>", and called with the result.</td>
 </tr>
 </tbody>
-</table><h2>
+</table><h4>
+<a name="examples-1" class="anchor" href="#examples-1"><span class="octicon octicon-link"></span></a>Examples:</h4>
+
+<p>Examples of these methods can be found in the unit tests for execute:</p>
+
+<ul>
+<li><a href="https://github.com/kodmunki/ku4js-reflection/tree/master/tests/src/class/sync">sync</a></li>
+<li><a href="https://github.com/kodmunki/ku4js-reflection/tree/master/tests/src/class/async">async</a></li>
+</ul><h2>
 <a name="blocks" class="anchor" href="#blocks"><span class="octicon octicon-link"></span></a>Blocks</h2>
 
-<p><em>Documentation Coming Soon</em></p>
+<p>Blocks are a addition that came out of Apple's extension of C. Where blocks open the ability to implement closures in C.
+Though JavaScript already includes this feature, the ability to pass functions across processes and threads may arise in
+the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across as
+arguments to async reflection invocations and include "<strong>CALLBACK</strong>" replacements in withing the block.</p>
+
+<p>Blocks are strings that take the following form:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="s1">'^([arg1[, arg2[, ...]]]) { /* implementation that may include __CALLBACK__ */ }'</span>
+<span class="err">``</span>
+
+<span class="nx">Using</span> <span class="k">this</span><span class="p">,</span> <span class="nx">we</span> <span class="nx">can</span> <span class="nx">see</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">example</span> <span class="nx">how</span> <span class="nx">a</span> <span class="nx">block</span> <span class="nx">may</span> <span class="nx">be</span> <span class="nx">used</span><span class="o">:</span>
+
+<span class="err">```</span><span class="nx">javascript</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ku4reflection</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s2">"$.service"</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"uri"</span><span class="o">:</span> <span class="p">[</span><span class="s2">"./"</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">"onSuccess"</span><span class="o">:</span> <span class="p">[</span><span class="s1">'^(){  __CALLBACK__; }'</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">"onError"</span><span class="o">:</span> <span class="p">[</span><span class="s1">'^(){ (function() { __CALLBACK__; })("ERROR"); }'</span><span class="p">]},</span>
+    <span class="s2">"call"</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span> <span class="p">});</span>
+</pre></div>
+
+<p>The above will attempt to call for the current document. If the call is made over http the callback result will be the
+text of the document. If the call is made over the file system the browser will likely not allow the call.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/kodmunki">kodmunki</a></p>
