@@ -1,6 +1,6 @@
 #ku4js-reflection
 
-kodmunki™ utilities for JavaScript Web Reflection.
+kodmunki™ utilities for JavaScript reflection.
 
 *(The following are the instructions from the build script found in the template at /_build/build.sh)*
 
