@@ -204,7 +204,30 @@ Although JavaScript already includes this feature, the ability to pass functions
 in the implementation of async reflection calls. ku4js-reflection blocks allow the developer to pass functions across
 threads as arguments to async reflection invocations and include "__CALLBACK__" replacements in withing the block.</p>
 
-<p>Blocks are strings that take the following form:</p>
+<table>
+<thead><tr>
+<th>API</th>
+<th>Return</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>isBlock(value:<em>String</em>)</td>
+<td>Boolean</td>
+<td>a class level method that returns true if value is a block.</td>
+</tr>
+<tr>
+<td>execute(block:<em>String</em>)</td>
+<td>Object?</td>
+<td>executes the block returning any return value that the block returns.</td>
+</tr>
+<tr>
+<td>toFunction(block:<em>String</em>)</td>
+<td>Function</td>
+<td>returns a function representation of the passed block.</td>
+</tr>
+</tbody>
+</table><p>Blocks are strings that take the following form:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="s1">'^([arg1[, arg2[, ...]]]) { /* implementation that may include __CALLBACK__ */ }'</span>
 </pre></div>
