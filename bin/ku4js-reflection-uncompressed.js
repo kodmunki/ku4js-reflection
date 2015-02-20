@@ -1,13 +1,14 @@
 (function(l){
 function ku4block(block) {
-    if(!$.ku4block.isBlock(block))
-        throw $.ku4exception("Argument Exception", "ku4blocks take the form function( /*[arg[, arg]]*/ ){ /*code*/ }" +
+    var _block = ($.isFunction(block)) ? block.toString() : block;
+    if(!$.ku4block.isBlock(_block))
+        throw $.ku4exception("Argument Exception", "ku4blocks take the form ^( /*[arg[, arg]]*/ ){ /*code*/ }" +
                              "\n\nCOMMON REASONS FOR EXCEPTIONS:" +
                              "\n1) Parameters must be a CSV containing no more than one space between commas and the next parameter." +
                              "\n2) The block may not contain leading or trailing space." +
-                             "\n3) The format of the block must contain: function(){}");
+                             "\n3) The format of the block must contain: ^(){}");
 
-    this._block = block.replace(/^\^/, "function");
+    this._block = _block.replace(/^\^/, "function");
 }
 ku4block.prototype = {
     execute: function() {
@@ -20,7 +21,8 @@ ku4block.prototype = {
 
 $.ku4block = function(block) { return new ku4block(block); };
 $.ku4block.isBlock = function(value) {
-    return /^(?:\^|function)\s?\((?:(?:\w+\,\s?)*\w+)?\)\s?\{[\s\S]*\}$/m.test(value);
+    var _value = ($.isFunction(value)) ? value.toString() : value;
+    return /^(?:\^|function)\s?\((?:(?:\w+\,\s?)*\w+)?\)\s?\{[\s\S]*\}$/m.test(_value);
 };
 
 /* Instantiates a Class with the passed constructors
@@ -58,7 +60,7 @@ function ku4reflection_instantiate(Class, constructors) {
  * as "__CALLBACK__" with the function passed as callback or default return function
  *
  * NOTE: Executes method of CLASS with callback
- * ku4reflection_execute_sync(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
+ * ku4reflection_execute_async(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
  */
 
 function ku4reflection_execute_async(instance, method, args, callback)
@@ -73,7 +75,7 @@ function ku4reflection_execute_async(instance, method, args, callback)
             var block = arg.replace(regexp, $.str.format(format, _callback.toString()));
             args[index] = $.ku4block(block).toFunction();
         }
-        else if(regexp.test(arg))   args[index] = _callback;
+        else if(regexp.test(arg)) args[index] = _callback;
     });
 
     return instance[method].apply(instance, args);
@@ -96,7 +98,7 @@ function ku4reflection_execute_chain_async(instance, methods, callback)
  * as "__CALLBACK__" with the function passed as callback or default return function
  *
  * NOTE: Executes method of CLASS with callback
- * ku4reflection_execute_sync(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
+ * ku4reflection_execute_async(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
  */
 
 function ku4reflection_execute_object_async(instance, method, callback)

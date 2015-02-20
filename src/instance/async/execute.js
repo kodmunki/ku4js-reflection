@@ -2,7 +2,7 @@
  * as "__CALLBACK__" with the function passed as callback or default return function
  *
  * NOTE: Executes method of CLASS with callback
- * ku4reflection_execute_sync(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
+ * ku4reflection_execute_async(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
  */
 
 function ku4reflection_execute_async(instance, method, args, callback)
@@ -17,7 +17,7 @@ function ku4reflection_execute_async(instance, method, args, callback)
             var block = arg.replace(regexp, $.str.format(format, _callback.toString()));
             args[index] = $.ku4block(block).toFunction();
         }
-        else if(regexp.test(arg))   args[index] = _callback;
+        else if(regexp.test(arg)) args[index] = _callback;
     });
 
     return instance[method].apply(instance, args);

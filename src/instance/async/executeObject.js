@@ -2,7 +2,7 @@
  * as "__CALLBACK__" with the function passed as callback or default return function
  *
  * NOTE: Executes method of CLASS with callback
- * ku4reflection_execute_sync(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
+ * ku4reflection_execute_async(new CLASS(), "method", ["arg", "__CALLBACK__"], function() { console.log("callback") });
  */
 
 function ku4reflection_execute_object_async(instance, method, callback)
